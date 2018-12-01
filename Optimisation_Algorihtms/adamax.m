@@ -1,4 +1,8 @@
 
+% Just change the function definition to any other function( funcx) you want and also change the 
+% corresponding gradient (grad) definition according to your function.
+% After running the code you will get the iteration count to reach the minima and also the function value at that point.
+
 
 xprev=[-10,-5];
 xnew=[4,4];

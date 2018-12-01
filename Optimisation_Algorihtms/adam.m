@@ -1,4 +1,8 @@
 
+% Just change the function definition to any other function( funcx) you want and also change the 
+% corresponding gradient (grad1) definition according to your function.
+% After running the code you will get the iteration count to reach the minima and also the function value at that point.
+
 
 xprev=[-10,-5];
 xnew=[4,4];
@@ -20,20 +24,20 @@ function g=grad(x)
   200*( x(2)- x(1) ^2 )];
 end
 
-  while(abs(funcx(xnew)-funcx(xprev))>0.0000001)
-      counter=counter+1;
-      xprev=xnew;
-      t=t+1;
-      g=grad(xprev);
-      mnew=beta1*mprev+(1-beta1)*g;
-     % disp(g);
-      vnew=beta2*vprev+(1-beta2)*(g.*g);
-      mcorr=mnew/(1-(beta1^t));
-      vcorr=vnew/(1-(beta2^t));
-      xnew=xprev-alpha*mcorr ./ (sqrt(vcorr)+prev);
-      vprev=vnew;
-      mprev=mnew;
-  end;
-  
-  fprintf("%d\n",counter);
-  fprintf("%2.6f\n",funcx(xprev));
+while(abs(funcx(xnew)-funcx(xprev))>0.0000001)
+    counter=counter+1;
+    xprev=xnew;
+    t=t+1;
+    g=grad(xprev);
+    mnew=beta1*mprev+(1-beta1)*g;
+   % disp(g);
+    vnew=beta2*vprev+(1-beta2)*(g.*g);
+    mcorr=mnew/(1-(beta1^t));
+    vcorr=vnew/(1-(beta2^t));
+    xnew=xprev-alpha*mcorr ./ (sqrt(vcorr)+prev);
+    vprev=vnew;
+    mprev=mnew;
+end;
+
+fprintf("%d\n",counter);
+fprintf("%2.6f\n",funcx(xprev));

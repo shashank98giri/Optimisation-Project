@@ -1,5 +1,10 @@
 
 
+% Just change the function definition to any other function( funcx) you want and also change the 
+% corresponding gradient (grad1) definition according to your function. 
+% After running the code you will get the iteration count to reach the minima and also the function value at that point.
+
+
 xprev=[-10,-5];
 xnew=[4,4];
 
@@ -9,6 +14,7 @@ prev=.00000001;
 step_sz=.00001;
 counter=0;
 epsilon=0.000001;
+
 function f= funcx(x)
   f=100*(( x(2) - x(1)^2 )^2)+( x(1) -1 )^2;
 end
